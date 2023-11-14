@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Generator</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function getRandomImage() {
+            // Array of image URLs
+            const imageUrls = [
+                'https://i.ibb.co/jJcWPCK/carpool-graphic2.png',
+                'https://i.ibb.co/483WvZ9/carpool-graphic5.png',
+                'https://i.ibb.co/GQxd1KM/carpool-graphic4.png',
+                'https://i.ibb.co/0D9Bzkh/carpool-graphic3.png',
+                'https://i.ibb.co/Nmrxksm/carpool-graphic1.png',
+            ];
+
+            // Get a random index from the array
+            const randomIndex = Math.floor(Math.random() * imageUrls.length);
+
+            // Create an image element
+            const imgElement = document.createElement('img');
+
+            // Set the source of the image to the randomly selected URL
+            imgElement.src = imageUrls[randomIndex];
+
+            // Append the image to the body
+            document.body.appendChild(imgElement);
+        }
+
+        // Call the function to generate a random image on page load
+        getRandomImage();
+    </script>
+</body>
+</html>
